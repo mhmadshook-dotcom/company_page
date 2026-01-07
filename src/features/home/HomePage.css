@@ -1,0 +1,14 @@
+.home-page {
+  /* Smooth scroll behavior for section navigation */
+  scroll-behavior: smooth;
+}
+
+/* Add smooth transitions between sections */
+.home-page > section {
+  position: relative;
+}
+
+/* Ensure proper spacing and flow */
+.home-page > section:not(:last-child) {
+  margin-bottom: 0;
+}

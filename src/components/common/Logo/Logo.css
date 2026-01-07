@@ -1,0 +1,124 @@
+/* MMS Code Logo Styles */
+.mms-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+/* Icon Styles */
+.mms-logo__icon {
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(43, 152, 255, 0.2));
+  transition: all 0.3s ease;
+}
+
+.mms-logo:hover .mms-logo__icon {
+  filter: drop-shadow(0 4px 12px rgba(43, 152, 255, 0.4));
+  transform: translateY(-2px);
+}
+
+/* Text Container */
+.mms-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  line-height: 1.2;
+}
+
+/* Make sure all SVG elements don't block clicks */
+.mms-logo svg,
+.mms-logo path,
+.mms-logo circle,
+.mms-logo text,
+.mms-logo span {
+  pointer-events: none;
+}
+
+/* Company Name */
+.mms-logo__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #2b98ff 0%, #13497b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* Tagline */
+.mms-logo__tagline {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+/* Size Variants */
+.mms-logo--small .mms-logo__name {
+  font-size: 1.25rem;
+}
+
+.mms-logo--small .mms-logo__tagline {
+  font-size: 0.55rem;
+}
+
+.mms-logo--large .mms-logo__name {
+  font-size: 2rem;
+}
+
+.mms-logo--large .mms-logo__tagline {
+  font-size: 0.75rem;
+}
+
+/* Icon-only variant */
+.mms-logo--icon .mms-logo__text {
+  display: none;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .mms-logo__tagline {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* RTL Support */
+[dir="rtl"] .mms-logo {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mms-logo__text {
+  text-align: right;
+}
+
+/* Responsive - Icon only on very small screens */
+@media (max-width: 480px) {
+  .mms-logo__text {
+    display: none;
+  }
+}
+
+/* Accessibility */
+.mms-logo:focus-visible {
+  outline: 2px solid #2b98ff;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Animation on load */
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mms-logo {
+  animation: logoFadeIn 0.6s ease-out;
+}

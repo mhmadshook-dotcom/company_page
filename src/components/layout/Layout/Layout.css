@@ -1,0 +1,40 @@
+/* MainLayout Styles */
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.main-layout__content {
+  flex: 1;
+  padding-top: 75px; /* Account for fixed navbar */
+  min-height: calc(100vh - 75px);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shift during navigation */
+.main-layout__content > * {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout__content {
+    padding-top: 70px;
+  }
+}

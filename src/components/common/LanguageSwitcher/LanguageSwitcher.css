@@ -1,0 +1,61 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.language-switcher:hover {
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  color: white;
+  border-color: #646cff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 108, 255, 0.45);
+}
+
+.language-switcher:active {
+  transform: translateY(0);
+}
+
+.language-switcher__icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.language-switcher__text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .language-switcher {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .language-switcher__icon {
+    font-size: 1rem;
+  }
+
+  .language-switcher__text {
+    font-size: 0.85rem;
+  }
+}
+
+/* RTL Support */
+/* RTL adjustment - Keep switcher accessible in both layouts */
+[dir="rtl"] .language-switcher {
+  left: 2rem;
+  right: auto;
+}

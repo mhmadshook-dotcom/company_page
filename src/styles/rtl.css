@@ -1,0 +1,538 @@
+/* Load Arabic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap');
+
+/* ==========================================
+   RTL (Right-to-Left) Support for Arabic
+   ========================================== */
+
+/* Base RTL styling - removed global text-align to allow mobile centering */
+
+[dir="rtl"] html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+[dir="rtl"] body {
+  font-family: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Typography - Line height and spacing for Arabic */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] span {
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] {
+  font-variant-numeric: proportional-nums;
+}
+
+/* ==========================================
+   NAVBAR - Mirror layout (Logo stays left)
+   ========================================== */
+
+/* Keep logo on the left, only mirror navigation side */
+[dir="rtl"] .navbar__logo {
+  order: -1;
+}
+
+[dir="rtl"] .navbar__nav-list {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__nav-link {
+  text-align: right;
+}
+
+[dir="rtl"] .navbar__nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .navbar__cta {
+  flex-direction: row-reverse;
+}
+
+/* Mobile responsive - slide from left in RTL */
+@media (max-width: 968px) {
+  [dir="rtl"] .navbar__logo {
+    order: 1;
+  }
+
+  [dir="rtl"] .navbar__menu-toggle {
+    order: 2;
+  }
+
+  [dir="rtl"] .navbar__nav {
+    right: unset;
+    left: -100%;
+    width: 320px;
+    max-width: 85%;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 6rem 2rem 2rem;
+  }
+
+  [dir="rtl"] .navbar__nav--open {
+    left: 0;
+    right: unset;
+  }
+
+  [dir="rtl"] .navbar__nav-list {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  [dir="rtl"] .navbar__nav-list li {
+    width: 100%;
+  }
+
+  [dir="rtl"] .navbar__nav-link {
+    text-align: center;
+  }
+
+  [dir="rtl"] .navbar__cta {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
+  }
+
+  [dir="rtl"] .navbar__cta-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  [dir="rtl"] .navbar__nav {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================
+   HERO SECTION - Mirror layout
+   ========================================== */
+
+[dir="rtl"] .hero__content {
+  text-align: right;
+}
+
+[dir="rtl"] .hero__actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero__actions .btn:first-child {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .hero__badge {
+  flex-direction: row-reverse;
+}
+
+/* ==========================================
+   BUTTONS - Mirror icons
+   ========================================== */
+
+[dir="rtl"] .btn {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn svg,
+[dir="rtl"] button svg {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .btn:has(svg:only-child) svg {
+  margin-left: 0;
+}
+
+/* ==========================================
+   SERVICES - Center cards in Arabic
+   ========================================== */
+
+[dir="rtl"] .service-card {
+  text-align: center;
+  align-items: center;
+}
+
+[dir="rtl"] .service-card__icon {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+[dir="rtl"] .service-card__title {
+  text-align: center;
+}
+
+[dir="rtl"] .service-card__description {
+  text-align: center;
+}
+
+[dir="rtl"] .service-card__features {
+  text-align: center;
+  align-items: center;
+}
+
+[dir="rtl"] .service-card__feature {
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+[dir="rtl"] .service-card__check {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* ==========================================
+   TECHNOLOGIES - Mirror badges
+   ========================================== */
+
+[dir="rtl"] .technology-badge {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .technology-badge svg {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* ==========================================
+   PROJECTS - Center cards in Arabic
+   ========================================== */
+
+[dir="rtl"] .project-card__header {
+  text-align: center;
+}
+
+[dir="rtl"] .project-card__meta {
+  flex-direction: row;
+  justify-content: center;
+}
+
+[dir="rtl"] .project-card__meta-item {
+  flex-direction: row-reverse;
+  margin-right: 0;
+  margin-left: 1.5rem;
+}
+
+[dir="rtl"] .project-card__meta-item:last-child {
+  margin-left: 0;
+}
+
+[dir="rtl"] .project-card__meta-item svg {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .project-card__tags {
+  flex-direction: row;
+  justify-content: center;
+}
+
+[dir="rtl"] .project-card__tag {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .project-card__tag:last-child {
+  margin-left: 0;
+}
+
+[dir="rtl"] .project-card h3,
+[dir="rtl"] .project-card p {
+  text-align: center;
+}
+
+[dir="rtl"] .project-card__actions {
+  flex-direction: row-reverse;
+}
+
+/* ==========================================
+   STATS - Mirror layout
+   ========================================== */
+
+[dir="rtl"] .stats__item {
+  text-align: right;
+}
+
+[dir="rtl"] .stats__grid {
+  direction: rtl;
+}
+
+/* ==========================================
+   FOOTER - Mirror layout
+   ========================================== */
+
+[dir="rtl"] .footer__content {
+  flex-direction: row-reverse;
+}
+
+/* Desktop RTL footer - right aligned */
+@media (min-width: 769px) {
+  [dir="rtl"] .footer__section {
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer__list {
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer__section-title::after {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* Mobile RTL footer - centered */
+@media (max-width: 768px) {
+  html[dir="rtl"] .footer__section,
+  [dir="rtl"] .footer__section {
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer__list,
+  [dir="rtl"] .footer__list {
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer__section-title::after,
+  [dir="rtl"] .footer__section-title::after {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+[dir="rtl"] .footer__link {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__link svg {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .footer__social-links {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__social-link {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .footer__social-link:last-child {
+  margin-left: 0;
+}
+
+[dir="rtl"] .footer__bottom {
+  flex-direction: row-reverse;
+}
+
+/* ==========================================
+   FORMS - Mirror inputs
+   ========================================== */
+
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  text-align: right;
+}
+
+/* ==========================================
+   LANGUAGE SWITCHER - Keep in corner
+   ========================================== */
+
+[dir="rtl"] .language-switcher {
+  left: 2rem;
+  right: auto;
+}
+
+/* ==========================================
+   LISTS - Mirror bullets/icons
+   ========================================== */
+
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+/* Desktop only - right align list items */
+@media (min-width: 769px) {
+  [dir="rtl"] li {
+    text-align: right;
+  }
+}
+
+/* ==========================================
+   BADGES & CHIPS - Mirror icons
+   ========================================== */
+
+[dir="rtl"] .badge,
+[dir="rtl"] .chip {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .badge svg,
+[dir="rtl"] .chip svg {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* ==========================================
+   GRID LAYOUTS - Maintain responsiveness
+   ========================================== */
+
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .services-preview__grid,
+[dir="rtl"] .projects-page__grid,
+[dir="rtl"] .technologies__grid {
+  direction: rtl;
+}
+
+/* ==========================================
+   ANIMATIONS - Mirror directional animations
+   ========================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  [dir="rtl"] .slide-in-left {
+    animation-name: slideInRight;
+  }
+  
+  [dir="rtl"] .slide-in-right {
+    animation-name: slideInLeft;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - Maintain on all devices
+   ========================================== */
+
+@media (max-width: 768px) {
+  [dir="rtl"] .navbar__nav-link {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  [dir="rtl"] .hero__actions {
+    flex-direction: column;
+  }
+  
+  [dir="rtl"] .hero__actions .btn:first-child {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+  
+  html[dir="rtl"] .footer__content {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer__section {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  html[dir="rtl"] .footer__section--brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer__tagline {
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer__list {
+    text-align: center !important;
+    display: block !important;
+  }
+
+  html[dir="rtl"] .footer__social {
+    justify-content: center !important;
+  }
+
+  html[dir="rtl"] .footer__section-title {
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer__section-title::after {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+  }
+
+  html[dir="rtl"] .footer__link {
+    text-align: center !important;
+  }
+}
+
+/* Cards */
+[dir="rtl"] .service-card,
+[dir="rtl"] .project-card {
+  text-align: right;
+}
+
+/* Badges */
+[dir="rtl"] .badge {
+  direction: rtl;
+}
+
+/* Stats and numbers - keep LTR for numbers */
+[dir="rtl"] .hero__stat-number,
+[dir="rtl"] .trust-stat__number {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* Contact form */
+[dir="rtl"] .contact-form input,
+[dir="rtl"] .contact-form textarea,
+[dir="rtl"] .contact-form select {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  [dir="rtl"] .navbar__menu-toggle {
+    right: auto;
+    left: 1rem;
+  }
+}
