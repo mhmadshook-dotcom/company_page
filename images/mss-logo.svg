@@ -1,0 +1,61 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Modern Software Company Logo -->
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="85" fill="url(#bgGradient)"/>
+  
+  <!-- Inner Circle Accent -->
+  <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  
+  <!-- Main Code Symbol - Forward Slash with Brackets -->
+  <g opacity="0.95">
+    <!-- Left Angle Bracket < -->
+    <path d="M 60 75 L 45 100 L 60 125" 
+          stroke="#ffffff" 
+          stroke-width="10" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+    
+    <!-- Forward Slash / -->
+    <line x1="85" y1="130" x2="115" y2="70" 
+          stroke="#ffffff" 
+          stroke-width="10" 
+          stroke-linecap="round"/>
+    
+    <!-- Right Angle Bracket > -->
+    <path d="M 140 75 L 155 100 L 140 125" 
+          stroke="#ffffff" 
+          stroke-width="10" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+  </g>
+  
+  <!-- Cursor Blink Effect (optional detail) -->
+  <rect x="158" y="98" width="3" height="18" rx="1.5" fill="#ffffff" opacity="0.7"/>
+  
+  <!-- Bottom Binary Accent -->
+  <g opacity="0.5">
+    <circle cx="80" cy="150" r="3" fill="#ffffff"/>
+    <circle cx="92" cy="150" r="3" fill="#ffffff"/>
+    <circle cx="108" cy="150" r="3" fill="#ffffff"/>
+    <circle cx="120" cy="150" r="3" fill="#ffffff"/>
+  </g>
+  
+  <!-- Top Corner Tech Details -->
+  <g opacity="0.3">
+    <circle cx="65" cy="50" r="2" fill="#ffffff"/>
+    <circle cx="75" cy="45" r="2" fill="#ffffff"/>
+    <circle cx="85" cy="48" r="2" fill="#ffffff"/>
+  </g>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="50%" stop-color="#764ba2"/>
+      <stop offset="100%" stop-color="#f093fb"/>
+    </linearGradient>
+  </defs>
+</svg>
